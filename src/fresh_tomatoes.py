@@ -150,9 +150,8 @@ def create_movie_tiles_content(movies):
         )
     return content
 
-
-def open_movies_page(movies):
-    """Open movies in the default browser"""
+def generate_movies_page(movies):
+    """Generate movies HTML page and returns its URL"""
     # Create or overwrite the output file
     output_file = open('fresh_tomatoes.html', 'w')
 
@@ -163,7 +162,10 @@ def open_movies_page(movies):
     # Output the file
     output_file.write(MAIN_PAGE_HEAD + rendered_content)
     output_file.close()
+    return os.path.abspath(output_file.name)
 
+def open_movies_page(movies):
+    """Open movies in the default browser"""
+    url = generate_movies_page(movies)
     # open the output file in the browser (in a new tab, if possible)
-    url = os.path.abspath(output_file.name)
     webbrowser.open('file://' + url, new=2)
