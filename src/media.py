@@ -1,9 +1,6 @@
 import webbrowser
 
-# __doc__
-# __name__
-# __module__
-class Movie(object): # pylint: disable=too-few-public-methods 
+class Movie(object): # pylint: disable=too-few-public-methods
     """ Model for movies instances """
     def __init__(self, title, storyline, poster_image_url, trailer_youtube_url):
         self.title = title
