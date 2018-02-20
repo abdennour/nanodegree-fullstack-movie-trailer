@@ -2,6 +2,10 @@ import webbrowser
 
 class Movie(object): # pylint: disable=too-few-public-methods
     """ Model for movies instances """
+
+    # Filename of data source
+    DATASOURCE = 'movies.json'
+
     def __init__(self, title, storyline, poster_image_url, trailer_youtube_url):
         self.title = title
         self.storyline = storyline

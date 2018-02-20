@@ -16,7 +16,7 @@ def map_dict_to_object(movie):
     )
 
 
-JSON_PATH = os.path.join(os.getcwd(), 'src', 'movies.json')
+JSON_PATH = os.path.join(os.getcwd(), 'src', media.Movie.DATASOURCE)
 
 with open(JSON_PATH) as movies_file:
     # Convert movies from string to list of dictionary
