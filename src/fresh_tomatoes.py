@@ -44,6 +44,11 @@ MAIN_PAGE_HEAD = '''
             background-color: #EEE;
             cursor: pointer;
         }
+
+        .movie-tile h2 {
+            color: #8dc63f;
+        }
+
         .scale-media {
             padding-bottom: 56.25%;
             position: relative;
@@ -115,7 +120,10 @@ MAIN_PAGE_CONTENT = '''
 
     <!-- Main Page Content -->
     <div class="container">
-      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="navbar navbar-inverse navbar-fixed-top"
+           role="navigation"
+           style="background: #000;"
+      >
         <div class="container">
           <div class="navbar-header">
             <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>

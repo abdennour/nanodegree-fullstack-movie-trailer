@@ -19,10 +19,10 @@ def map_dict_to_object(movie):
 JSON_PATH = os.path.join(os.getcwd(), 'src', media.Movie.DATASOURCE)
 
 with open(JSON_PATH) as movies_file:
-    # Convert movies from string to list of dictionary
+    # Convert movies from string to list of dictionaries
     MOVIES_DICT = json.loads(movies_file.read())
 
-    # Convert from list of dictionary to list of Movie instances
+    # Convert from list of dictionaries to list of Movie instances
     MOVIES = map(map_dict_to_object, MOVIES_DICT)
 
     # Generate HTML and Open Web Page
