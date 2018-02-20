@@ -5,7 +5,7 @@ import media
 
 
 def map_dict_to_object(movie):
-    """ converter of movie structure: From Dictionary structure to Movie Object"""
+    """ converter of movie structure: From Dictionary to Movie Object"""
     return media.Movie(
         title=movie['title'],
         poster_image_url='https://i.ytimg.com/vi/{}/mqdefault.jpg'.format(

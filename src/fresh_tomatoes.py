@@ -12,10 +12,11 @@ MAIN_PAGE_HEAD = '''
     <title>Fresh Tomatoes!</title>
 
     <!-- Bootstrap 3 -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://goo.gl/ednYZv">
+    <link rel="stylesheet" href="https://goo.gl/Xyo8nt">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="https://goo.gl/s9WD9C">
+    </script>
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
@@ -59,20 +60,27 @@ MAIN_PAGE_HEAD = '''
     </style>
     <script type="text/javascript" charset="utf-8">
         // Pause the video when the modal is closed
-        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
-            // Remove the src so the player itself gets removed, as this is the only
-            // reliable way to ensure the video stops playing in IE
-            $("#trailer-video-container").empty();
+        $(document).on(
+           'click',
+            '.hanging-close, .modal-backdrop, .modal',
+            function (event) {
+             // Remove the src so the player itself gets removed,
+             // as this is the only reliable way
+             // to ensure the video stops playing in IE
+             $("#trailer-video-container").empty();
         });
         // Start playing the video whenever the trailer modal is opened
         $(document).on('click', '.movie-tile', function (event) {
             var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
-            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
-            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
-              'id': 'trailer-video',
-              'type': 'text-html',
-              'src': sourceUrl,
-              'frameborder': 0
+            var baseUrl = 'http://www.youtube.com/embed/'
+            var sourceUrl = baseUrl + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container")
+              .empty()
+              .append($("<iframe></iframe>", {
+                'id': 'trailer-video',
+                'type': 'text-html',
+                'src': sourceUrl,
+                'frameborder': 0
             }));
         });
         // Animate in the movies when the page loads
@@ -93,8 +101,11 @@ MAIN_PAGE_CONTENT = '''
     <div class="modal" id="trailer">
       <div class="modal-dialog">
         <div class="modal-content">
-          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
-            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          <a href="#"
+             class="hanging-close"
+             data-dismiss="modal"
+             aria-hidden="true">
+            <img src="https://goo.gl/Yfnu4q"/>
           </a>
           <div class="scale-media" id="trailer-video-container">
           </div>
@@ -122,7 +133,9 @@ MAIN_PAGE_CONTENT = '''
 
 # A single movie entry html template
 MOVIE_TILE_CONTENT = '''
-<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
+<div class="col-md-6 col-lg-4 movie-tile text-center"
+     data-trailer-youtube-id="{trailer_youtube_id}"
+     data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h2>{movie_title}</h2>
 </div>
@@ -150,6 +163,7 @@ def create_movie_tiles_content(movies):
         )
     return content
 
+
 def generate_movies_page(movies):
     """Generate movies HTML page and returns its URL"""
     # Create or overwrite the output file
@@ -163,6 +177,7 @@ def generate_movies_page(movies):
     output_file.write(MAIN_PAGE_HEAD + rendered_content)
     output_file.close()
     return os.path.abspath(output_file.name)
+
 
 def open_movies_page(movies):
     """Open movies in the default browser"""
