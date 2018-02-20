@@ -49,7 +49,7 @@ scp -i $YOUR_SSH_PRIVATE_KEY fresh_tomatoes.html ubuntu@your-server-ip:/var/www/
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](#CONTRIBUTING.md) for details on our code and the process of handling pull requests.
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code and the process of handling pull requests.
 
 ## Authors
 
