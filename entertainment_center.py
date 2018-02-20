@@ -1,25 +1,38 @@
-#!/usr/bin/python
 import fresh_tomatoes
 import media
 
-movies_list = [{
-    'title': 'Hello ACloud Guru',
-    'poster_image_url': 'http://via.placeholder.com/160x250.png',
-    'storyline': 'Blah Blah Blah',
-    'trailer_youtube_url': 'https://youtu.be/aRvVwG4wnRw',
-    }]
+MOVIES_LIST = [{
+    'id': 'KYz2wyBy3kc',
+    'title': 'Toy Story',
+    'storyline': 'Woody Memorable Moments.'
+}, {
+    'id': 'eu1jekOB7sw',
+    'title': 'The Jungle',
+    'storyline': 'Disney Movies For Kids | Movies For Kids | Animation Movies For Children'
+}, {
+    'id': 'F_QW5TI5cqA',
+    'title': 'Caillou, LiVE!',
+    'storyline': ' Fun for Kids | Videos for Toddlers | Full Episodes'
+}, {
+    'id': '3b2jrx2eMP8',
+    'title': 'Disney Movies For Kids',
+    'storyline': ' Movies For Kids - Animation Movies For Children'
+}]
 
-# lambda converter of movie structure : From Dictionary structure to Movice Object
+# lambda converter of movie structure: From Dictionary structure to Movie Object
 
-map_dict_to_object = lambda movie: media.Movie(title=movie['title'],
-        poster_image_url=movie['poster_image_url'],
-        storyline=movie['storyline'],
-        trailer_youtube_url=movie['trailer_youtube_url'])
+map_dict_to_object = lambda movie: media.Movie(
+    title=movie['title'],
+    poster_image_url='https://i.ytimg.com/vi/{}/mqdefault.jpg'.format(
+        movie['id']),
+    storyline=movie['storyline'],
+    trailer_youtube_url='https://youtu.be/{}'.format(movie['id'])
+)
 
-# Convert the whole list
+# Convert the whole list from list of dictionary to list of Movie instances
 
-movies = map(map_dict_to_object, movies_list)
+MOVIES = map(map_dict_to_object, MOVIES_LIST)
 
 # Generate HTML and Open Web Page
 
-fresh_tomatoes.open_movies_page(movies)
+fresh_tomatoes.open_movies_page(MOVIES)
