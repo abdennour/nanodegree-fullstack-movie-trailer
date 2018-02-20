@@ -11,14 +11,16 @@ Source code for a Movie Trailer website.
 
 ### Installing
 
-To get a development environment running, execute the following command line :
+- To get a development environment running, execute the following command line :
 
 ```sh
 python src/entertainment_center.py
 
 ```
 
-The command above generates HTML page of movies list and open this page in your default browser.
+- The command above generates HTML page of movies list and open this page in your default browser.
+
+- To change list of movies, update `src/movies.json`.
 
 
 ## Running the tests
