@@ -2,6 +2,7 @@
 
 Source code for a Movie Trailer website.
 
+
 ## Getting Started
 
 ### Prerequisites
