@@ -53,7 +53,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code and the p
 
 ## Authors
 
-* **Abdennour TOUMI** - *Orginal Author* - [in.abdennoor.com](http://in.abdennoor.com)
+* **Abdennour TOUMI** - *Original Author* - [in.abdennoor.com](http://in.abdennoor.com)
 
 
 ## License
